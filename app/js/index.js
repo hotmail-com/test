@@ -1,5 +1,5 @@
 ﻿var TextController = ['$http', '$scope', function($http, $scope){
-	$http.get('../js/test.json').success(function(data){
+	$http.get('http://localhost:8080/app/js/test.json').success(function(data){
 		$scope.q_list = data;
 	});
 
