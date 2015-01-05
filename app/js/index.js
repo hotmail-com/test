@@ -1,4 +1,5 @@
-﻿var TextController = ['$http', '$scope', function($http, $scope){
+﻿var testApp = angular.module('TestApp',[]);
+testApp.controller('TextController',['$http', '$scope', function TextController($http, $scope){
 	$http.get('http://localhost:8080/app/js/test.json').success(function(data){
 		$scope.q_list = data;
 	});
@@ -38,4 +39,4 @@
 			}
 		})
 	}
-}]
+}]);
