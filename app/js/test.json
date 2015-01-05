@@ -1,0 +1,24 @@
+[{
+	"type": "single",
+	"q": "age",
+	"as": ["20~30", "30~40", "40~50", "above 50"]
+}, {
+	"type": "single",
+	"q": "city",
+	"as": ["Beijing", "Shanghai", "Guangzhou", "Shenzhen"]
+}, {
+	"type": "mutiple",
+	"q": "intrested",
+	"as": ["music", "sports", "eating", "sleeping"]
+}, {
+	"type": "mutiple",
+	"q": "advantage",
+	"as": ["patient", "loyal", "humorous", "skilled"]
+}, {
+	"type": "text",
+	"q": "name"
+}, {
+	"type": "select",
+	"q": "province",
+	"as":[{"city":"Shanghai"},{"city":"Beijing"},{"city":"Shenzhen"}]
+}]

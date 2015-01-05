@@ -1,0 +1,17 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "authors": [
+    "Christopher <dust_38@hotmail.com>"
+  ],
+  "keywords": [
+    "test"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angularjs": "~1.3.8",
+    "jquery": "~2.1.3",
+    "foundation": "~5.5.0"
+  }
+}
