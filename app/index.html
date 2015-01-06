@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="TestApp">
+<html ng-app="testApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
 			<div ng-if="question.type=='select'">
 				<label for="{{question.q}}">{{question.q}}</label>
 				<select name="{{question.q}}" id="{{question.q}}">
-					<option value="">请选择</option>
+					<option value="">Please choose</option>
 					<option ng-repeat="op in question.as" value="{{op}}">{{op}}</option>
 				</select>
 			</div>

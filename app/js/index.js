@@ -1,5 +1,5 @@
-﻿var testApp = angular.module('TestApp',[]);
-testApp.controller('TextController',['$http', '$scope', function TextController($http, $scope){
+﻿var testApp = angular.module('testApp',[]);
+testApp.controller('TextController',['$http', '$scope', function($http, $scope){
 	$http.get('http://localhost:8080/app/js/test.json').success(function(data){
 		$scope.q_list = data;
 	});
@@ -14,6 +14,8 @@ testApp.controller('TextController',['$http', '$scope', function TextController(
 	}
 
 	$scope.submitForm = function(){
+		console.log('13')
+		var flag = true;
 		$('form .row').find('label').removeClass('error');
 		var each_row = $('form .row');
 		$.each(each_row, function(){
@@ -22,21 +24,26 @@ testApp.controller('TextController',['$http', '$scope', function TextController(
 				if($(this).find('input[type=checkbox]').length>0 && 
 					$(this).find('input[type=checkbox]:checked').length==0 ){
 					$('label[for='+label+']').addClass('error');
+					flag = false;
 				}
 
 				if($(this).find('input[type=radio]').length>0 && 
 					$(this).find('input[type=radio]:checked').length==0){
 					$('label[for='+label+']').addClass('error');
+					flag = false;
 				}
 
 				if($(this).find('input[type=text]').val()==''){
 					$('label[for='+label+']').addClass('error');
+					flag = false;
 				}
 
 				if($(this).find('select').val()==''){
 					$('label[for='+label+']').addClass('error');
+					flag = false;
 				}
 			}
 		})
+		if(!flag)	return;
 	}
 }]);
