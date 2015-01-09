@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title></title>
-	<link rel="stylesheet" href="/app/bower_components/foundation/css/foundation.css">
+	<link rel="stylesheet" href="/bower_components/foundation/css/foundation.css">
 	<style>
 	.error input, .error textarea, .error select {
 		margin-bottom: 1rem;
@@ -16,7 +16,7 @@
 	</style>
 </head>
 <body ng-controller="TextController">
-	<form action="" autocomplete="off" name="myForm" id="myForm" ng-submit="submitForm()">
+	<form action="" autocomplete="off" name="myForm" id="myForm" ng-submit="submitForm(myForm.$valid)">
 		<div class="row" ng-repeat="question in q_list">
 			<div ng-if="question.type=='single'">
 				<label for="{{question.q}}">{{question.q}}</label>
@@ -38,9 +38,9 @@
 			</div>
 			<div ng-if="question.type=='select'">
 				<label for="{{question.q}}">{{question.q}}</label>
-				<select name="{{question.q}}" id="{{question.q}}">
+				<select name="{{question.q}}" id="{{question.q}}" ng-options="question.as.city for question.as.city in question.as">
 					<option value="">Please choose</option>
-					<option ng-repeat="op in question.as" value="{{op}}">{{op}}</option>
+					<!-- <option ng-repeat="op in question.as" value="{{op}}">{{op}}</option> -->
 				</select>
 			</div>
 		</div>
@@ -49,8 +49,8 @@
 			<input type="submit" role="button" aria-label="submit form" class="button">
 		</div>
 	</form>
-	<script src="/app/bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="/app/bower_components/angularjs/angular.min.js"></script>
-	<script src="/app/js/index.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/angularjs/angular.min.js"></script>
+	<script src="/js/index.js"></script>
 </body>
 </html>

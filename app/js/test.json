@@ -20,5 +20,5 @@
 }, {
 	"type": "select",
 	"q": "province",
-	"as":[{"city":"Shanghai"},{"city":"Beijing"},{"city":"Shenzhen"}]
+	"as": ["Beijing", "Shanghai", "Guangzhou", "Shenzhen"]
 }]

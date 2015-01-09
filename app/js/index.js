@@ -1,10 +1,14 @@
 ﻿var testApp = angular.module('testApp',[]);
+
 testApp.controller('TextController',['$http', '$scope', function($http, $scope){
-	$http.get('http://localhost:8080/app/js/test.json').success(function(data){
+	$http({method:'GET', url:'http://localhost:8080/js/test.json'}).success(function(data){
 		$scope.q_list = data;
+	}).error(function(){
+		alert("ERROR")
 	});
 
 	$scope.clear = function(str){
+		console.log('123')
 		var strObj = $(str);
 		if(strObj.type=="radio"){
 			$(strObj).parents('.row').find('label').removeClass('bold');
@@ -14,8 +18,6 @@ testApp.controller('TextController',['$http', '$scope', function($http, $scope){
 	}
 
 	$scope.submitForm = function(){
-		console.log('13')
-		var flag = true;
 		$('form .row').find('label').removeClass('error');
 		var each_row = $('form .row');
 		$.each(each_row, function(){
@@ -24,23 +26,19 @@ testApp.controller('TextController',['$http', '$scope', function($http, $scope){
 				if($(this).find('input[type=checkbox]').length>0 && 
 					$(this).find('input[type=checkbox]:checked').length==0 ){
 					$('label[for='+label+']').addClass('error');
-					flag = false;
 				}
 
 				if($(this).find('input[type=radio]').length>0 && 
 					$(this).find('input[type=radio]:checked').length==0){
 					$('label[for='+label+']').addClass('error');
-					flag = false;
 				}
 
 				if($(this).find('input[type=text]').val()==''){
 					$('label[for='+label+']').addClass('error');
-					flag = false;
 				}
 
 				if($(this).find('select').val()==''){
 					$('label[for='+label+']').addClass('error');
-					flag = false;
 				}
 			}
 		})
