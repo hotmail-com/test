@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>user.html</title>
+	<link rel="stylesheet" href="/bower_components/foundation/css/foundation.css">
+</head>
+<body ng-controller="UserCtrl">
+	<h2>用户信息表</h2>
+	<div class="row">
+		<div ng-repeat="rs in data">
+			<div class="medium-3 columns">
+				<a href="/partials/{{rs.id}}" ng-bind="rs.id"></a>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/bower_components/angular-route/angular-route.min.js"></script>
+	<script src="/js/app.js"></script>
+</body>
+</html>

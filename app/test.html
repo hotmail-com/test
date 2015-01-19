@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="UserModule">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.blur {	
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+    
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+       -moz-filter: blur(10px);
+        -ms-filter: blur(10px);    
+            filter: blur(10px);
+	.text{position:absolute; left:100px; color:white; z-index:10000
+	}
+	</style>
+</head>
+<body ng-module="UserModule">
+	<img src="/images/DSC00033.JPG" width="50%" />
+	<div class="text" style="top:100px; ">这是磨砂效果</div>
+	<img src="/images/DSC00033.jpg" width="50%" class="blur" />
+	<div class="text" style="top:600px; ">这是磨砂效果</div>
+	<div class="text" style="top:700px; ">这是菜单</div>
+</body>
+</html>
